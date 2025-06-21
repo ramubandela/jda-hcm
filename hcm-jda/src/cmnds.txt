@@ -1,0 +1,38 @@
+kubectl get pods
+kubectl exec -it absence-cep-consumer-6d5b68b6d-abcde -- /bin/sh
+kubectl exec -it <pod-name> -c <container-name> -- /bin/sh
+kubectl logs absence-cep-consumer-6d5b68b6d-abcde
+kubectl config get-contexts
+kubectl config use-context <context-name>
+kh get cj
+kh get job
+kh get deploy
+kh describe depploy | grep Image
+ps -ef | grep mongo
+kubectl scale absence-cep-consumer --replicas=0
+kubectl get cronjob absence-cep-consumer-job -o jsonpath='{.spec.schedule}'
+
+kubectl patch cronjob absence-cep-consumer-job -n <your-namespace> \
+  -p '{"spec": {"schedule": "21 13 * * 5"}}'
+
+...................................
+
+Mongo commands
+
+show dbs	List all databases
+use <db>	Switch to database
+show collections	List collections in current DB
+db.collection.find()	Query documents from a collection
+db.collection.insertOne({...})	Insert a document
+db.collection.updateOne(...)	Update a document
+db.collection.deleteOne(...)	Delete a document
+
+.........................................................
+Splunk
+index=hcm_jda-transformer_ppe  "*adapter*" | dedup source | table source
+index=test
+| search "abc"
+| search "telugu"
+| search "hi"
+
+

@@ -1,0 +1,62 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-app-job
+  namespace: my-namespace
+  labels:
+    app: my-app
+spec:
+  backoffLimit: 2                    # ✅ Retry up to 2 times if the job fails
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      restartPolicy: OnFailure       # Required for job retries
+      serviceAccountName: my-app-service-account
+      containers:
+        - name: my-app-container
+          image: my-dockerhub-user/my-app:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_MODE
+              value: "production"
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: my-app-config
+                  key: db_host
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: my-app-secrets
+                  key: secret_key
+          volumeMounts:
+            - name: app-storage
+              mountPath: /data
+            - name: config-volume
+              mountPath: /app/config
+              readOnly: true
+            - name: secret-mount
+              mountPath: /mnt/secret-bank
+              readOnly: true
+            - name: absence-cep-consumer-pod-logs
+              mountPath: /applogs
+              readOnly: false
+      volumes:
+        - name: app-storage
+          emptyDir: {}
+        - name: config-volume
+          configMap:
+            name: my-app-config
+        - name: secret-mount
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "event-consumer-secret-provider"
+        - name: absence-cep-consumer-pod-logs
+          hostPath:
+            path: /app/logs
+            type: DirectoryOrCreate
