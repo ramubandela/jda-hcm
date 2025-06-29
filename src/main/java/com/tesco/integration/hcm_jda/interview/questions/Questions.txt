@@ -1,0 +1,38 @@
+Paypall 23/06/2025
+1. find the third highest salary
+2. java 8 features and difference to java 17
+3. can we use local variable in lambda expressions?
+
+        String s="";
+        List.of(1,2,3,4).stream().map(x->s=s+x).collect(Collectors.toList());
+
+        gives compile time exception saying
+        Variable used in lambda expression should be final or effectively final
+
+
+4. which error code will return when input validation fails(400)
+5. which idempotent in http method (GET, DELETE, PUT)
+6. when to use parallelStream in java8
+
+        Yes, parallelStream() can work efficiently for 10 lakh records if:
+        You’re doing CPU-bound, independent operations.
+        You avoid I/O in the stream.
+        Your hardware supports parallelism.
+7. find how many times each character repeated in String using java?
+
+        String s="ramuhelllo123@rtyr";
+        IntStream chars = s.chars();
+        Map<Character, Long> collect = chars.mapToObj(c -> (char) c).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        collect.forEach((x,y)->System.out.println(x+"  "+y));
+
+8. why Local variable restriction in lambda ?
+
+    Why This Restriction?
+   1. ✅ Closures in Java Capture Values, Not Variables
+   Java lambdas capture the value of the variable at the time the lambda is created, not a reference to the actual variable.
+
+   So if the variable changes later, the lambda won’t see it — leading to confusing behavior.
+
+   Restricting to final/effectively final avoids this problem.
+
+
