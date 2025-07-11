@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.security.cert.CertPathValidatorException;
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -106,14 +107,69 @@ public class Paypall {
  //9. intern method Example
         // from the heap memory  object reference will be pointed to SCP
 
-        String string=new String("test");
+      /*  String string=new String("test");
         String string2="test";
 
         System.out.println(string2==string);
         //But
-        System.out.println(string.intern()==string2);
+        System.out.println(string.intern()==string2);*/
 
-//10 Stream count example
+//10 Stream count example for adding, finding min and max
+
+
+         List<Integer> list=new ArrayList<>();
+         list.add(1);
+         list.add(2);
+         list.add(100);
+        list.add(10);
+        list.add(20);
+        list.add(1000);
+
+
+        long count = list.stream().count();
+        System.out.println(count+"count");
+        Optional<Integer> reduce = list.stream().reduce((x1, x2) -> x1 + x2);
+        System.out.println(reduce.get());
+
+        //to find min or max directly
+        Optional<Integer> reduce1 = list.stream().reduce(Integer::min);
+        System.out.println(reduce1.get());
+
+        //to find min or max by using binary operator
+        Optional<Integer> reduce2 = list.stream().reduce((a, b) -> {
+                    if (a < b) {
+                        return a;
+                    }else {
+                        return b;
+                    }
+
+
+                }
+
+        );
+
+
+        System.out.println(reduce2.get()+"reduce2");
+// or Directly use min or max and sum methods of Stream
+
+        Optional<Integer> max = list.stream().max(Comparator.comparing(x -> x));
+        System.out.println(max.get()+"max");
+
+        Optional<Integer> min = list.stream().min(Comparator.comparing(x -> x));
+        System.out.println(min.get()+"min");
+
+         list.stream().mapToInt(x->x).sum();
+
+//Arrays Example
+
+        int a[]=new int[5];
+        int b[]={1,2,3,4,5};
+// types of variables
+        //static variables-- stores in method area
+        //instance variables --> stores in heap area
+        //local variables ---> stores in stack area
+
+
 
     }
 }

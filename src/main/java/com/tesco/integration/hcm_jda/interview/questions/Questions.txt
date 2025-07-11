@@ -34,5 +34,58 @@ Paypall 23/06/2025
    So if the variable changes later, the lambda won’t see it — leading to confusing behavior.
 
    Restricting to final/effectively final avoids this problem.
+...................................................
+9. what are three rules of over loading
+1. method signature should be different
+2. child argument get more priority
+3. Specific version will get more priority
+
+............................................
+10. Overriding rules.
+
+1. method signature must be same
+2. return type same or co variant (in child class same object or child references)
+3. if any method throws any compile time exception in child class then in parent class same or parent class exception should be thrown.
+4. in child class scope can be increased.
+
+11. static control flow vs instance flow
+1. In static flow top to bottom identify static members from parent to child.
+2. execution of static variables assignments & static blocks from parent to child
+3. Execution of child class main method
+
+12. Instance flow
+1. Identification of instance members top to bottom
+2. Execution of instance variable assignments instance blocks from top to bottom
+3. Execution of constructor.
+
+13. Singleton class creation and when it gets violated.
+https://salithachathuranga94.medium.com/stop-breaking-singleton-pattern-in-java-7bf7f87393c3
+14. Immutable class when its get violated.
+        https://salithachathuranga94.medium.com/implement-immutable-classes-with-java-df5b5b66ffd9
+14. DeadLock example program
+15. producer and consumer programme using multithreading.
+https://medium.com/@dilip.thakkar./producer-consumer-pattern-using-java-multi-threading-229ffb8cb1a6
+16.Partion example
+ Given a list of integers, separate odd and even numbers?
+17. How do you find frequency of each character in a string using Java 8 streams?
+
+  String inputString = "Java Concept Of The Day";
+18. sorting example in java8
+
+
+
+ACL client cisco 03/07/2025
+19.find the first highest salary by department wise
+20. find the second highest salary by department wise
+21. how hashmap works
+22. time complexity get(key) in hashmap ans o(1)
+
+ACl paypall interview 26/06/2025
+1. java 8 features
+2. what is immutability in rest
+GET, PUT, DELETE
+3. which method is immutable in rest
+4. find the third highest salary of employee
+
 
 
