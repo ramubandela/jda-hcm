@@ -81,11 +81,12 @@ ACL client cisco 03/07/2025
 22. time complexity get(key) in hashmap ans o(1)
 
 ACl paypall interview 26/06/2025
-1. java 8 features
-2. what is immutability in rest
+22. java 8 features
+23. what is immutability in rest Ans: though we do same request multiple times there is no change in the values
 GET, PUT, DELETE
 3. which method is immutable in rest
 4. find the third highest salary of employee
+5. int a[]={};
 
 
 
