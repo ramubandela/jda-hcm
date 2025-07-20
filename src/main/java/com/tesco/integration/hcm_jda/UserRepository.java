@@ -1,5 +1,5 @@
 package com.tesco.integration.hcm_jda;
 
-public interface UserRepository {
+public interface UserRepository{
 
 }

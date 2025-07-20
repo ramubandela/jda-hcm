@@ -2,6 +2,7 @@ package com.tesco.integration.hcm_jda.interview.questions;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Partion {
@@ -11,6 +12,7 @@ public class Partion {
 
         Map<Boolean, List<Integer>> collect = integers.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0));
 System.out.println(collect+"collect");
+
 
 
     }

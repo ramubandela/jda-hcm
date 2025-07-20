@@ -14,8 +14,20 @@ public class CharacterCount {
 
         System.out.println(collect+"collect..");
 
+        String inputString2 = "Java Concept Of The Day";
 
+        inputString2.chars().mapToObj(x->(char)x).collect(Collectors.groupingBy(x->x,Collectors.counting()));
 
+        String ss="programming";
+        String out="";
+        for(int i=0;i<ss.length();i++){
+            if(out.contains(((Character)ss.charAt(i)).toString())){
 
+            }else{
+                out=out+ss.charAt(i);
+            }
+        }
+
+        System.out.println(out+"out");
     }
 }
