@@ -94,11 +94,14 @@ Sony 14/07/2025
 4. when we get bean creation exception in Spring boot
 5. Solid princiles
 6. Design patterns
-7. Do you require permission to aws lambda to connect to lambda
+7. Do you require permission to aws lambda to connect to DB
 8. //Example Input: "programming" → Output: "progamin"
 9. @Qualifier and @Primary
 10 shallow cloning and deep cloning
 11. why do we require equals and hashcode methods
+12. When we get Dupliacte Bean creation exception
+13. how to create annotations in java
+14.
 
 
 
