@@ -10,7 +10,7 @@ public class Partion {
         List<Integer> integers = List.of(1, 2, 4, 89, 90, 100);
 
         Map<Boolean, List<Integer>> collect = integers.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0));
-System.out.println(collect+"collect");
+        System.out.println(collect+"collect");
 
     }
 }

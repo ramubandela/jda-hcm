@@ -101,7 +101,22 @@ Sony 14/07/2025
 11. why do we require equals and hashcode methods
 12. When we get Dupliacte Bean creation exception
 13. how to create annotations in java
-14.
+
+23/07/2025 paypall
+1. difference between hashmap, treemap and linkedhashmap and time complexity
+2. difference between pathvariable and queryparam and when to use which one
+3. In spring boot pagination and sorting write
+4.   // Find the intersection of two arrays(with duplicates)
+
+         // Input:  arr1 = [1, 2, 2, 3], arr2 = [2, 2, 4]
+
+          //Output:[2,2]
+5. find the second highest salry by department wise , need to print department name also
+6. print the total number of students and department name
+7. difference between controller and Rest controller
+8.
+
+
 
 
 
