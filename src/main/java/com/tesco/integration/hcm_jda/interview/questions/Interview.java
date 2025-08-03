@@ -56,5 +56,12 @@ public class Interview {
         System.out.println("collect5   "+collect5);
 
 
+        List<Integer> listOfIntegers2 = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
+
+        Integer integer = listOfIntegers2.stream().max(Comparator.naturalOrder()).get();
+
+        System.out.println("Max integer"+integer);
+
+
     }
 }

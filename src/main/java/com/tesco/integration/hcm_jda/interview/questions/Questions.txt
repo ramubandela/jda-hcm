@@ -95,7 +95,7 @@ Sony 14/07/2025
 5. Solid princiles
 6. Design patterns
 7. Do you require permission to aws lambda to connect to DB
-8. //Example Input: "programming" → Output: "progamin"
+8. //Example Input: "programming" → Output: "progamin" with out using hashmanp or set
 9. @Qualifier and @Primary
 10 shallow cloning and deep cloning
 11. why do we require equals and hashcode methods
@@ -105,7 +105,7 @@ Sony 14/07/2025
 23/07/2025 paypall
 1. difference between hashmap, treemap and linkedhashmap and time complexity
 2. difference between pathvariable and queryparam and when to use which one
-3. In spring boot pagination and sorting write
+3. In spring boot pagination and sorting write, Use Requestparam for passing values of pagnumber and size
 4.   // Find the intersection of two arrays(with duplicates)
 
          // Input:  arr1 = [1, 2, 2, 3], arr2 = [2, 2, 4]
