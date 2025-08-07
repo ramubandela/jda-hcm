@@ -116,6 +116,22 @@ Sony 14/07/2025
 7. difference between controller and Rest controller
 8.
 
+07/08/2025 altimetrik
+
+1. String str = "Java is a good programming language";
+          //find 1st non re-occuring character: output is J;
+
+2. OOPS principles
+3. Data hiding
+4. Composition/Aggregation	 in java
+5. for final arraylist can i add elements? yes, but re assign not possible
+6. Solid principles  // not able to tell properly the Interface segregation and dependency injection
+7. Micro services design patterns
+8. In orchastrator design pattern if in between transaction transactions orchastrator fails, how we handle
+
+ Store the state into DB and start reading from there.
+
+ 9.
 
 
 
