@@ -1,4 +1,4 @@
-package com.tesco.integration.hcm_jda.SinglYLinkedList;
+package com.tesco.integration.hcm_jda.SinglyLinkedList;
 
 public class Node {
     int value;

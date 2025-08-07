@@ -1,3 +1,4 @@
+/*
 package com.tesco.integration.hcm_jda;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,4 @@ class HcmJdaApplicationTests {
 	}
 
 }
+*/

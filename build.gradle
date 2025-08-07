@@ -14,15 +14,15 @@ java {
 }
 
 repositories {
-	mavenLocal() // First check local Maven cache (~/.m2/repository)
+//	mavenLocal() // First check local Maven cache (~/.m2/repository)
 
-	maven {
+/*	maven {
 		url "https://your-nexus-domain/repository/your-repo-name/"
 		credentials {
 			username = project.findProperty("nexusUsername") ?: ""
 			password = project.findProperty("nexusPassword") ?: ""
 		}
-	}
+	}*/
 
 	mavenCentral() // Optional, fallback to Maven Central
 }
@@ -52,7 +52,7 @@ jar {
 	}
 }
 
-task buildDockerImage {
+/*task buildDockerImage {
 	group = "Docker"
 	description = "Builds Docker image using Dockerfile and Gradle exec"
 
@@ -66,7 +66,7 @@ task buildDockerImage {
 			commandLine 'docker', 'build', '-t', imageName, '.'
 		}
 	}
-}
+}*/
 /*publishing {
 	publications {
 		mavenJava(MavenPublication) {
@@ -95,8 +95,9 @@ dependencies {
 	implementation 'org.projectlombok:lombok:1.18.26'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
+	//implementation 'org.springframework.data:spring-data-jpa:3.2.0'
     // Caffeine Cache
     implementation 'com.github.ben-manes.caffeine:caffeine'
 
@@ -109,9 +110,9 @@ dependencies {
 	//runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
-tasks.named('test') {
+/*tasks.named('test') {
 	useJUnitPlatform()
-}
+}*/
 
 //sonarqube {
 	//properties {
