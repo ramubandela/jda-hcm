@@ -131,7 +131,12 @@ Sony 14/07/2025
 
  Store the state into DB and start reading from there.
 
- 9.
+ 9. How do you create a utility class in java ?
+  with static variables, static methods and private constructor
+
+08/09/2025   wayfair
+1. match bracket question
+2. in react create a drop down, if you select red color, then display you sleceted red color, similary for other colors
 
 
 

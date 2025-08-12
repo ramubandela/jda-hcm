@@ -1,4 +1,4 @@
-package com.tesco.integration.hcm_jda.ds;
+package com.tesco.integration.hcm_jda.ds.sort;
 
 public class InsertionSort {
 
