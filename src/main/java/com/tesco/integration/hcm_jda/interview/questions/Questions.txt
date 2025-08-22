@@ -266,6 +266,23 @@ x=10;
 5. find the average of all the employees in java8
 6. what is hash collision
 7. difference between synchronized amp and concurrent map
+8. error codes
+9. how hashmap stores in java8 after 9 elements added it will be storing into balanced tree
+
+Thresholds for Treeification
+
+By default:
+
+Treeify Threshold = 8
+→ If a bucket has more than 8 nodes, it gets converted into a Red-Black Tree.
+
+Untreeify Threshold = 6
+→ If tree size shrinks back to <= 6 (e.g., deletions), it converts back to linked list.
+
+Minimum capacity = 64
+→ Treeification happens only if the whole HashMap has at least 64 buckets (capacity ≥ 64).
+If capacity is smaller, instead of treeifying, the HashMap will resize (rehash) to reduce collisions.
+
 
 22/08/2025  --Apexion
 1. Difference between filter and interceptor
@@ -288,7 +305,12 @@ x=10;
 8. Optional class example full like
     how many ways  we can create a Optional object and different Optional object methods
     and difference between orElse and orELseGet()
-9.
+9. difference between BeanFactory and Application context
+10. how to handle failures in microservices
+11. java 8 features
+12. Transitive failure
+13. put and patch differences
+14.
 
 
 
