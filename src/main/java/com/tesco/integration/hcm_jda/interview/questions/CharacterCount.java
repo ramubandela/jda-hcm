@@ -1,9 +1,6 @@
 package com.tesco.integration.hcm_jda.interview.questions;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CharacterCount {
@@ -29,5 +26,12 @@ public class CharacterCount {
         }
 
         System.out.println(out+"out");
+
+        String inputString3 = "Java Concept Of The Day";
+        LinkedHashMap<Character, Long> collect1 = inputString3.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(x -> x, LinkedHashMap::new, Collectors.counting()));
+
+        Map.Entry<Character, Long> characterLongEntry = collect1.entrySet().stream().filter(x -> x.getValue().equals(1l)).findFirst().get();
+
+        System.out.println("Non repeated character +"+characterLongEntry);
     }
 }

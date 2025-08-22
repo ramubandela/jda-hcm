@@ -18,7 +18,7 @@ public class DepartmentWiseHighestSalary {
         list.add(employee1);
         list.add(employee2);
         list.add(employee3);
-        list.stream().collect(Collectors.groupingBy(Employe::getDepartment,Collectors.maxBy(Comparator.comparingDouble(Employe::getSal))));
+  /*      list.stream().collect(Collectors.groupingBy(Employe::getDepartment,Collectors.maxBy(Comparator.comparingDouble(Employe::getSal))));
 
 
         //Second highest salary find
@@ -33,12 +33,44 @@ public class DepartmentWiseHighestSalary {
                                         .skip(1) // Skip highest
                                         .findFirst() // Get second highest
                         )
-                ));
+                ));*/
+
+
+        Map<String, List<Employe>> collect = list.stream().collect(Collectors.groupingBy(x -> x.department));
+        Map<String, List<Employe>> collect1 = collect;
+        Employe e=new Employe();
+        collect1.forEach((k, v)->
+                {
+                    List<Employe> collect2 = v.stream().sorted(Comparator.comparingInt(Employe::getSal).reversed()).limit(2).collect(Collectors.toList());
+               System.out.println(collect2+"collect2");
+               Employe employe = collect2.get(1);
+              System.out.println(employe);
+
+                }
+                );
+
+       // System.out.println(collect1);
+
+        //ollect.entrySet().stream().sorted(Comparator.comparingInt(e->e.get)).limit(2)
+
+        Map<String, List<Employe>> collect2 = list.stream().collect(Collectors.groupingBy(x -> x.getDepartment()));
+       // System.out.println("map"+collect2);
+
+
+        collect2.forEach((k, v)->{
+
+            Optional<Employe> first = v.stream().sorted(Comparator.comparingInt(Employe::getSal).reversed()).skip(1).limit(1).findFirst();
+            System.out.println("first"+first);
+        });
 
 
     }
 }
 class Employe{
+
+    public Employe(){
+
+    }
     public Employe(int id, int sal, String department) {
         this.id = id;
         this.sal = sal;
@@ -70,6 +102,17 @@ class Employe{
     }
 
     int id;
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Employe{");
+        sb.append("id=").append(id);
+        sb.append(", sal=").append(sal);
+        sb.append(", department='").append(department).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     int sal;
 
     String department;
