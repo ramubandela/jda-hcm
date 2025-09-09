@@ -13,15 +13,11 @@ public class SingleNumber {
     }
 
     public static int findSingleNumber(int a[]){
-
-
     int singleNumber=0;
         for(int i:a){
 
             singleNumber=singleNumber^i;
         }
-
         return singleNumber;
-
     }
 }

@@ -37,11 +37,15 @@ public class DepartmentWiseHighestSalary {
 
 
         Map<String, List<Employe>> collect = list.stream().collect(Collectors.groupingBy(x -> x.department));
-        Map<String, List<Employe>> collect1 = collect;
+      //  Map<String, List<Employe>> collect1 = collect;
+
+        List<Employe> secondHighest=new ArrayList<>();
+
         Employe e=new Employe();
-        collect1.forEach((k, v)->
+        collect.forEach((k, v)->
                 {
-                    List<Employe> collect2 = v.stream().sorted(Comparator.comparingInt(Employe::getSal).reversed()).limit(2).collect(Collectors.toList());
+                    List<Employe> collect2 = v.stream().sorted(Comparator.comparingInt(Employe::getSal).reversed()).limit(2).skip(1).collect(Collectors.toList());
+                    secondHighest.addAll(collect2);
                System.out.println(collect2+"collect2");
                Employe employe = collect2.get(1);
               System.out.println(employe);

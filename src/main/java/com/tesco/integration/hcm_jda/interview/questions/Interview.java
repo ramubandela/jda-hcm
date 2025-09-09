@@ -1,13 +1,14 @@
 package com.tesco.integration.hcm_jda.interview.questions;
 
 import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Interview {
     public static void main(String[] args) {
 
 
-        List<Integer> listOfIntegers = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
+      /*  List<Integer> listOfIntegers = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
         Map<Boolean, List<Integer>> collect = listOfIntegers.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0));
         System.out.println(collect+"collect");
 
@@ -60,8 +61,32 @@ public class Interview {
 
         Integer integer = listOfIntegers2.stream().max(Comparator.naturalOrder()).get();
 
-        System.out.println("Max integer"+integer);
+        System.out.println("Max integer"+integer);*/
+
+        String inputString = "Java Concept Of The Day";
+
+        Map<Character, Long> collect = inputString.chars().mapToObj(c -> (char) c).filter(c->c !=' ').collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+
+        System.out.println(collect+"collect");
 
 
+        List<Double> decimalList = Arrays.asList(12.45, 23.58, 17.13, 42.89, 33.78, 71.85, 56.98, 21.12);
+
+        List<Double> collect1 = decimalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+
+        decimalList.stream().max(Comparator.reverseOrder()).ifPresent(x->System.out.println(x));
+
+
+        Optional<Double> reduce = decimalList.stream().reduce((x, y) -> x > y ? x : y);
+
+
+       // finding the max length input
+
+        List<String> listOfStrings2 = Arrays.asList("Facebookeeee", "Twitter45rrrrrrrrrrrr", "YouTube", "WhatsApp", "LinkedIn");
+
+        List<String> collect2 = listOfStrings2.stream().sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
+        System.out.println(collect2);
+
+      //  listOfStrings2.stream()
     }
 }

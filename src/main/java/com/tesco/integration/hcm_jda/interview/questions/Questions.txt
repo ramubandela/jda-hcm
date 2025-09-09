@@ -89,12 +89,12 @@ GET, PUT, DELETE
 
 Sony 14/07/2025
 1. Why Static method in the Builder class
-2. How the call goes to Restcontroller in spring boot
-3. how do you intercept the each request
-4. when we get bean creation exception in Spring boot
-5. Solid princiles
+2. How the call goes to Rest controller in spring boot?  Dispatcher servelet-->handler mapping-->Handler adpater
+3. how do you intercept  each request in spring boot?
+4. when we get bean creation exception in Spring boot? when we have two subclasses which implements same class and while creatng the object for parent type
+5. Solid principles
 6. Design patterns
-7. Do you require permission to aws lambda to connect to DB
+7. Do you require permission to aws lambda to connect to DB, Yes
 8. //Example Input: "programming" → Output: "progamin" with out using hashmanp or set
 9. @Qualifier and @Primary
 10 shallow cloning and deep cloning
@@ -128,7 +128,7 @@ Sony 14/07/2025
 3. Data hiding
 4. Composition/Aggregation	 in java
 5. for final arraylist can i add elements? yes, but re assign not possible
-6. Solid principles  // not able to tell properly the Interface segregation and dependency injection
+6. Solid principles  // not able to tell properly the Interface segregation and dependency inversion
 7. Microservices design patterns
 8. In Orchestrator design pattern if in between transaction transactions orchastrator fails, how we handle
 
@@ -208,7 +208,7 @@ public class Test {
   6. java 8 features
   7. metaspace and permGen?
   8. intern method?
-  9. final with static and without static
+  9. final variable with static and without static
 
   instance variable
 
@@ -245,7 +245,7 @@ x=10;
      ans :1
   20. why in streams intermediate operations are lazy?
   21. how parallel streams works
-  22. difference between rank and dense rank in db?
+  22. difference between rank and dense_rank in db?
   23. Concurrent hashmap
 24. Dirty reads, repeatable reads and serializable reads in DB
 
@@ -265,9 +265,9 @@ x=10;
 4. i have list of employees, display those names whose names starting with "A"
 5. find the average of all the employees in java8
 6. what is hash collision
-7. difference between synchronized amp and concurrent map
+7. difference between synchronizedmap and concurrent map
 8. error codes
-9. how hashmap stores in java8 after 9 elements added it will be storing into balanced tree
+9. how hashmap stores in java8 after 8 elements added it will be storing into RED/BLACK tree if it has 64 buckets
 
 Thresholds for Treeification
 
@@ -285,7 +285,7 @@ If capacity is smaller, instead of treeifying, the HashMap will resize (rehash) 
 
 
 22/08/2025  --Apexion
-1. Difference between filter and interceptor
+1. Difference between filter and interceptor in spring
 2. There is an array A consisting of N integers. What is the maximum sum of two integers from A that have common  first and last digits?  If there are no two integers that have common  first and last digits, the function should return −1.
 
    Examples:
