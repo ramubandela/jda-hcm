@@ -310,8 +310,122 @@ If capacity is smaller, instead of treeifying, the HashMap will resize (rehash) 
 11. java 8 features
 12. Transitive failure
 13. put and patch differences
-14. Difference @Retry and @cicuitbreaker 
+14. Difference @Retry and @cicuitbreaker
 
+
+25/08/2025-- Mphasis second round
+
+1. second highest salary
+2. which gargbge collector when to use
+3. types of class loaders
+4. difference between flatmap, concurrenthsahmap, weakmap
+5. circular dependency in java and how to avoid it
+6. @Qualifier and @Lazy
+7. difference between daemon thread and thread
+8. Executor framework explain
+9.
+
+
+React
+1.todo app creating
+2. slices and reducers
+3. hoisting different types
+4. usesatate and usememo write
+5. diference between usememo and useEffct
+6. difference between slicers and reducers
+7. spread opearator
+8. callback functions
+9. writing junit test cases
+
+
+03/09/2025
+1. producer and consumer programme
+2. java 17 features sealed class and how improvemnets
+3. empId, trans, status, ammount, date  i have these fields get the empid and sum of transactions done in a particular month.
+4. how do you find the slow running application in micro services
+
+
+03/09/2025 Mphasis
+Output for below ?
+1.      String s1="abc";
+        String s2=s1;
+        s2=s2.concat("d");
+        System.out.println(s1);   System.out.println(s2);  System.out.println(s1==s2);
+2.         String s1="abc";
+           String s2=s1;
+           s2.concat("d");
+           System.out.println(s1);   System.out.println(s2);  System.out.println(s1==s2);
+3. design patterns builder asked write code?
+4.
+
+09/09/2025 --Virtusa
+1. method hiding
+
+Parent p=new child()--> even though it is child object, resolution happens at the time of compilation based on the Reference type
+so parent method will be called
+
+2.  java program to find the second highest salary by department wise
+3. Proxy deisgn pattern explain --> explained with Debit card proxy for bank acconut
+4. In solid principles explain Liskov substitution principle?
+5.  In spring boot Employee object is singleton and address object scope is session any problem.
+There will be problem as Employee object bean created and Address bean not available so to avoid that we need to use below one
+proxyMode = ScopedProxyMode.TARGET_CLASS
+
+@Component
+@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class Address {
+    // session-specific data
+}
+
+
+6. Circular dependency in spring, how do you resolve it? By using lazy
+7. Spring bean scopes
+Scope	Description
+singleton	One instance for the whole application (default)-->container
+prototype	New instance every time it's requested
+request	One instance per HTTP request
+session	One instance per HTTP session
+application	One instance per servlet context
+8. difference between weak hashmap and map and linked hashmap?
+9. difference between filter and interceptor in spring boot?
+10. Explain Completable feature in java?
+
+9. In kafka producer producing lot of messages and consumer not able to consume at the same speed, how to handle this case?
+1. Increase Consumer Throughput
+Increase the number of consumer instances in the consumer group.
+
+Ensure the topic has enough partitions (one consumer can consume one partition at a time).
+
+2. Block or delay the producer when Kafka is overloaded:
+
+   acks=all
+   linger.ms=10
+   batch.size=32768
+   buffer.memory=67108864
+   max.block.ms=60000
+3. Add More Kafka Partitions
+
+   Kafka consumers scale horizontally by partition.
+
+   If your topic only has 1 partition, only 1 consumer can consume.
+10. Can two consumers can get message from same partition?
+
+No, two consumers in the same consumer group cannot consume messages from the same Kafka partition simultaneously.
+
+11. what is offset, how it will be useful
+12. how to avoid duplicate message processing in kafka?
+13. In micro services how do you protect the pods communication?
+14. In Orchastrator deisgn pattern if orchastrator goes down, how do you handle the transactions?
+15. micro services design patterns?
+16. how service discovery happens in the eureka/ kuberneties cluster?
+17. in service discovery does the client or eureka server has to service information?
+
+Actually client has to register with the eureka server.
+18. does the singleton object thread safe?
+19.difference between NACL and security groups
+20 difference between application load balancer and netwrok load balancer
+21. difference between security groups and IAm roles
+22. s3
 
 
 
