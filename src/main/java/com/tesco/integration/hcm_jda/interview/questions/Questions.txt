@@ -425,7 +425,16 @@ Actually client has to register with the eureka server.
 19.difference between NACL and security groups
 20 difference between application load balancer and netwrok load balancer
 21. difference between security groups and IAm roles
-22. s3
+22. What are the services you worked on?
+
+
+12/09/2025------------>MorganStanley
+1. String s="mijuiihhssiioookkklllssdd" find the first non repating character place
+2. Find the longest substring
+3. I want store employee object into hashmap what we need to take of
+4. what is the relation between hashcode and equlas
+5. explain the how hashmap works
+
 
 
 

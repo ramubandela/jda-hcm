@@ -67,6 +67,14 @@ public class DepartmentWiseHighestSalary {
             System.out.println("first"+first);
         });
 
+        list.stream().collect(Collectors.groupingBy(Employe::getDepartment,
+                Collectors.collectingAndThen(
+                        Collectors.toList(),
+                        empList ->empList .stream().sorted(Comparator.comparingInt(Employe::getSal).reversed()).skip(1).findFirst()
+                )
+                )
+        );
+
 
     }
 }
