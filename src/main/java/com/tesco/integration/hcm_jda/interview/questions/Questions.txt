@@ -428,7 +428,7 @@ Actually client has to register with the eureka server.
 22. What are the services you worked on?
 
 
-12/09/2025------------>MorganStanley
+12/09/2025(wissen -round -01)------------>MorganStanley
 1. String s="mijuiihhssiioookkklllssdd" find the first non repating character place
 2. Find the longest substring
 3. I want store employee object into hashmap what we need to take of
@@ -436,18 +436,234 @@ Actually client has to register with the eureka server.
 5. explain the how hashmap works
 
 
+16/09/2025 (Wissen round -02)
+It is like a finding the longest substring and add if condition only for length
+Given a string s and an integer k, find the length of the longest substring that contains
+at most k distinct characters Input: String s = "eceba"; int k = 2; Explanation:
+The substrings with at most 2 distinct characters are: "ec" (distinct characters: e, c)
+"ece" (distinct characters: e, c) "ec" (distinct characters: e, c) "eba" (distinct characters: e, b, a) → Invalid (has 3 distinct characters)
+The longest valid substring is "ece", which has a length of 3.
 
 
 
+      TreeMap<Integer, Integer> treeMap1 = new TreeMap<>();
+        treeMap1.put(1, 10);
+        treeMap1.put(2, 20);
+        treeMap1.put(3, 30);
+
+        TreeMap<Integer, Integer> treeMap2 = new TreeMap<>();
+        treeMap2.put(2, 15);
+        treeMap2.put(3, 25);
+        treeMap2.put(4, 40);
 
 
+Merge two Treemaps with custom logic
+1) if a key is present in both the maps then sum the value
+2) if a key is present in only one map then retain the value as it is
+TreeMap1: {1=10, 2=20, 3=30}
+TreeMap2: {2=15, 3=25, 4=40} Output: {1=10, 2=35, 3=55, 4=40}
 
 
+17/09/2025 -- GlobalLogic
+1. String s="javatestdeveloper";  for the above find the number of times each character repeated in alphabetical order?
+alphabetical order
+Map<Character, Long> collect = s.chars().
+mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, TreeMap::new, Collectors.counting()));
+
+2.       // ("apple", "bannana", "cherry", "apple", "cherry", "mango","apple", "cherry", "bannana","jackfruit","jackfruit","apple", "mango", "bannana")
+for the above find the top 3 value after grouping
+
+  Map<String, Long> freqMap = apple.stream()
+                .collect(Collectors.groupingBy(fruit -> fruit, Collectors.counting()));
+
+        freqMap.entrySet().stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue(Comparator.reverseOrder()))
+                .limit(3)
+                .forEach(entry ->
+                    System.out.println(entry.getKey() + " : " + entry.getValue())
+                );
+3.  /*              Employee   --->table
+                    EmpId, name
+                     EmployeeSalarry --->table
+                    id, EmpId, salary, allowance
+            list of employyee name starts with R and salary more than 10L and allowance between 5 to 10 K*/
+
+SELECT e.name
+FROM Employee e
+JOIN EmployeeSalary s
+    ON e.EmpId = s.EmpId
+WHERE e.name LIKE 'R%'
+  AND s.salary > 1000000
+  AND s.allowance BETWEEN 5000 AND 10000;
+
+4. for the same find the second highest salary
+
+SELECT salary
+FROM (
+    SELECT salary,
+           DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+    FROM EmployeeSalary
+) t
+WHERE rnk = 2;
+
+18/02/2025 ---EPAM
+1. into the set iam adding two employees with values what will be size?
+Set<Emp> set=new HashSet();
+Emp e1=new Employee(1,"ramu","bd");
+Emp e2=new Employee(1,"ramu","bd");
+
+size will be two bcz by equals methods retrns false so two objects will be there
+
+2. I have two methods, both are synchronized
+
+synchrozed void m1(){
+}
+synchrozed void mm2(){
+}
+
+Test t1=new Test();
+t1.m1();
+t1.m2();
+one will wait for other thread object is same object level lock required here.
 
 
+1. Country wise count
+
+ select country, count(country)
+           from cutomers
+            group by country
+            havin  count(country)
+2.   /*  Given a list of words, group them by anagrams, and sort the groups by the frequency (descending) of words in each group.
+          Within each group, sort the words in ascending order.
+
+                  Input example:
+          List<String> input = Arrays.asList(
+                  "listen", "silent", "enlist", "google", "gooegl", "inlets", "cat", "act", "tac", "dog"
+          );
+
+          Expected output:
+  [
+    [enlist, inlets, listen, silent],    // 4 words
+    [act, cat, tac],                     // 3 words
+    [google, gooegl],                   // 2 words
+    [dog]                                // 1 word
+  ]*/
+
+ 3. number  of times each character repeated.
+
+    String s="java is fun and java is powerful";
+
+ String s="java is fun and java is powerful";
+        String[] s1 = s.split(" ");
+        List<String> list = Arrays.asList(s1);
+        LinkedHashMap<String, Long> collect = list.stream().collect(Collectors.groupingBy(x -> x, LinkedHashMap::new, Collectors.counting()));
+       String word=new String();
+
+        Set<Map.Entry<String, Long>> entries = collect.entrySet();
+        for(Map.Entry<String, Long> entry:entries){
+            if(entry.getValue()==1){
+                word=entry.getKey();
+                break;
+            }
+        }
+
+19/09/2025 EPAM
+1. Atomic integer volatile difference
+Use volatile when you just want to make sure all threads see the latest value (e.g., a stop flag in a loop).
+
+Use AtomicInteger when you need thread-safe increments, counters, or CAS updates.
 
 
+3. difference between factory and abstact factory factory pattern
 
+4. difference synchronized map and concurrent map
+5. I want the output below like
+
+ Map<String,Person> map = new HashMap<>();
+
+        map.put("g",new Person("Charlie", 51, "Infra"));
+
+        map.put("e",new Person("Francis",25,"Admin"));
+
+        map.put("a",new Person("Allen", 44, "Operations"));
+
+      /*  "e",new Person(4,25,"DD")
+        "a",new Person(3, 44, "CC")
+        "g",new Person(5, 51, "EE")*/
+
+        LinkedHashMap<String, Person> collect3 = map.entrySet().stream().
+        sorted(Map.Entry.comparingByValue(Comparator.comparingInt(Person::getAge))).
+        collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (l1, l2) -> l2, LinkedHashMap::new));
+
+5. Repsoitory scopes
+
+uncommited, commited, repeateble read, serializable
+
+6. difference between group by and partition by in java 8
+7. difference between map and flatmap
+8. difference between crud repo and jpa repo
+9. how do you write custom queries
+10. difference between @Entity and  @Table
+@Entity Meaning: Without @Entity, the class won’t be recognized by JPA/Hibernate for persistence.
+@Table Purpose: Specifies the details of the database table to which the entity is mapped.
+12. difference between failfast and failsafe iterators in java
+14. Explain CICD in your project
+15. how concurrenthashmap works
+11. Http codes
+
+2. 2xx → Success
+
+The request was successfully received, understood, and accepted.
+
+Examples:
+
+200 OK → Standard success response.
+
+201 Created → New resource successfully created (POST).
+
+202 Accepted → Request accepted but processing is not complete (async).
+
+204 No Content → Success but no body in response (e.g., DELETE).
+
+4xx → Client Errors
+
+The problem is on the client side (invalid request).
+
+Examples:
+
+400 Bad Request → Invalid syntax (e.g., malformed JSON).
+
+401 Unauthorized → Authentication required (no/invalid token).
+
+403 Forbidden → Authenticated but not allowed.
+
+404 Not Found → Resource doesn’t exist.
+
+405 Method Not Allowed → HTTP method not supported (e.g., PUT on a read-only API).
+
+409 Conflict → Request conflicts with current state (e.g., duplicate record).
+
+429 Too Many Requests → Rate limiting (client sent too many requests).
+
+
+. 5xx → Server Errors
+
+The problem is on the server side.
+
+Examples:
+
+500 Internal Server Error → Generic server failure.
+
+502 Bad Gateway → Server acting as gateway got invalid response from upstream.
+
+503 Service Unavailable → Server temporarily overloaded or down.
+
+504 Gateway Timeout → Upstream server didn’t respond in time.
+
+19/09/2025  Epam managerial round
+1.  /*  Input =aaaAaaABbbbBcCcC
+
+              Output =aBc*/
 
 
 

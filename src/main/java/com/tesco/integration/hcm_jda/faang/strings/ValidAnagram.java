@@ -1,9 +1,6 @@
 package com.tesco.integration.hcm_jda.faang.strings;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ValidAnagram {
@@ -12,16 +9,15 @@ public class ValidAnagram {
         String s1="ramudxcvbd";
         String s2="ramucvbdvb12";
 
-        if(s1.length() !=s2.length()){
-            System.out.println("is not anagram");
-            return;
-        }
 
         Map<Character,Integer> hm1=new HashMap<>();
         Map<Character,Integer> hm2=new HashMap<>();
 
         Map<Character, Long> collect = s1.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
         Map<Character, Long> collect2 = s2.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        LinkedHashMap<Character, Long> collect1 = s1.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(x -> x, LinkedHashMap::new, Collectors.counting()));
+
+        System.out.println(collect1+"collect1");
 
         Set<Map.Entry<Character, Long>> entries = collect.entrySet();
         boolean isAnagram=false;
