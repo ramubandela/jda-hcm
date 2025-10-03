@@ -609,6 +609,8 @@ uncommited, commited, repeateble read, serializable
 12. difference between failfast and failsafe iterators in java
 14. Explain CICD in your project
 15. how concurrenthashmap works
+16. how micro services communicate each other?
+17.
 11. Http codes
 
 2. 2xx → Success
@@ -666,4 +668,46 @@ Examples:
               Output =aBc*/
 
 
+20/09/2025 ---Harmann
+1. print the size, if we use
+[2], Got confused here with the concurrent modification exception.
+   List<Integer> list=new ArrayList<>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
 
+      for(int i=0;i<list.size();i++){
+          list.remove(i);  //Here we dont get concurrent modification exception
+      }
+
+ for(Integer ii: list){
+          list.remove(i);  //Here we  get concurrent modification exception
+      }
+
+2.   List<Integer> list=new ArrayList<>();
+         list.add(1);
+         list.add(2);
+         list.add(3,2); // here also got confused, I thought adding two elements but we we are adding at the 3rd position
+          list.add(null);
+           list.add(null);
+3. create table, insert values into it, customers and orders data will be there queries like find the max number o orders done
+
+
+Adidas:
+1. cmd vs entry point
+2. multi stage build
+3. frequency of each character
+4. internal working of conncrrenthashmap
+5 cap theorem
+6. Enterprise design pattern (Strangler design)
+7. chain of responsibility
+8.
+
+
+RobertBosch(bench people epam interview questions)
+1. how @Conditionalbean works
+2. @Async
+3. Limitations of @AutoConfigurations try to relate with N+1 problem.
+4. versioning in API -ways to do it
+5. how to create rest api documentation
+6. ObjectMapper usage
