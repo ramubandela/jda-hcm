@@ -698,10 +698,10 @@ Adidas:
 2. multi stage build
 3. frequency of each character
 4. internal working of conncrrenthashmap
-5 cap theorem
+5. cap theorem
 6. Enterprise design pattern (Strangler design)
 7. chain of responsibility
-8.
+8. Sharding and partioning
 
 
 RobertBosch(bench people epam interview questions)
@@ -711,3 +711,51 @@ RobertBosch(bench people epam interview questions)
 4. versioning in API -ways to do it
 5. how to create rest api documentation
 6. ObjectMapper usage
+
+EDJO-IAPD(key developer)(Bench people)
+1. micro services discussion
+2. patterns best practices
+3. Micro services vs monolithics
+4. Service discovery, types of communication
+5. kafka discussion offeset, topics
+6. Oauth2, JWT, Spring securty
+7. SAGA(Choreogragragraphy vs Orchestration)
+8. 2 phase commit, Compensating transaction
+9. Indexes in SQL types and features
+10. Stream in java8
+11. Disadvantages of micro services
+12. different deployment strategies (Rolling update and Blue green)
+
+Goldman sachs---   08/10/2025 Goldman sachs internal round
+1. CompletableFuture Example where I have list of employeeIds, by using CompletableFuture need to get the list
+    of employee details
+
+    List.of(2,3,5,6,8,90,678)
+    difference between supplyAsync, runAysnc
+    how it differs from the Callable
+2. group the employees by age and display only the age and list of employee names not employee objects
+
+25,{"ramu","raja"},
+26,{"Sravan", "Arun"}
+3. 2D array that is sorted both row-wise and column-wise, and you need to find whether a given target exists in it.
+
+Matrix =
+[
+  [1,  4,  7, 11],
+  [2,  5,  8, 12],
+  [3,  6,  9, 16],
+  [10,13,14,17]
+]
+
+Target = 9  → true
+Target = 15 → false
+
+4. why do you use s3 bucket and how did trigger from the api gateway
+5. how to improve performance
+6. how do you configure cloud watch logs
+7. how to improve performance in s3 buckets
+8. how to reduce costs for s3
+9. how to handle large files in s3 bucket
+10. how do you avoid cross functional team accessing s3 bucket data
+11. How to configure two databses in spring boot.
+12. How config server works
