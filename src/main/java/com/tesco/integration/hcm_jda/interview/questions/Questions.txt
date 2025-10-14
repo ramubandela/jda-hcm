@@ -759,3 +759,41 @@ Target = 15 → false
 10. how do you avoid cross functional team accessing s3 bucket data
 11. How to configure two databses in spring boot.
 12. How config server works
+
+13/10/2025--skill initial review interview
+
+1. aggregation and composition
+2. why Wrapper classes are immutable
+3. Optional<String> optional=Optional.of(null);
+System.out.println(optional.ispresent);  O/p will be nullpointer exception
+4. difference between cahced threadpool and fixedthreadpool
+5. why do we  use CompletebleFuture?
+6. Integer a = 100;
+   Integer b = 100;
+   System.out.println(a == b);  true bcz due to autoboxing
+
+   int a=100;
+   int b=100; so it becomes true
+
+
+   Integer a = 200;
+   Integer b = 200;
+   System.out.println(a == b); false
+Because Java caches Integer objects for values in the range -128 to +127.
+
+7. Integer a = new Integer(100);
+   Integer b = new Integer(100);
+   System.out.println(a == b); here it is false --> bcz different objects
+
+8. when do we use cutsom checked and custom unchecked exceptions in java
+9. how does the concurrenHashmap works?
+10. what is the treefication in map?
+11. what are the main scopes in maven
+12. In multi module project there are two sub modules A, B, how the Autoconfiguration works in A?
+13. how do you write test cases in spring boot project
+14. how do you mock @value in spring boot service test cases.
+
+
+
+
+
