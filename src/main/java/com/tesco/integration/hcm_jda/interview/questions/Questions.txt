@@ -792,6 +792,12 @@ Because Java caches Integer objects for values in the range -128 to +127.
 12. In multi module project there are two sub modules A, B, how the Autoconfiguration works in A?
 13. how do you write test cases in spring boot project
 14. how do you mock @value in spring boot service test cases.
+15.  /* Given a list of employees where each employee has an ID, name, and a list of projects
+            (each with a name and duration in months), write a Java program to find the employee
+            who has worked on the most projects; if multiple employees are tied,
+            return the one with the longest total project duration, and
+            if still tied, return any one of them.*/
+
 
 
 
