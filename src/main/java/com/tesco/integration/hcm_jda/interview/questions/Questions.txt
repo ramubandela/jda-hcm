@@ -799,6 +799,18 @@ Because Java caches Integer objects for values in the range -128 to +127.
             if still tied, return any one of them.*/
 
 
+22/10/2025 edward jones internal round
+
+1. how kafka security works while fetching data
+2. I have array with 10 elements, now added 200 elements and removed the 180 elements
+  what will be the capacity now?
+3. how microservice security works
+4. design pattens in the micro services
+5. Trainer
+        id, name
+    Trainee
+    id, name, trainer_id find the Trainer who has more trainees?
+
 
 
 

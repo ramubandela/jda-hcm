@@ -55,8 +55,6 @@ public class OptionalExample {
                 .filter(s -> s.startsWith("P"))
                 .or(() -> Optional.empty()); // returns empty if condition fails
 
-
-
     }
 
     private static String getFromDatabase() {
