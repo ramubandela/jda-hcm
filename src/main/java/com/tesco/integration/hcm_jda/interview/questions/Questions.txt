@@ -296,12 +296,12 @@ x=10;
   My interview questions
   1. what is the use of abstract class constructor?
   The constructor of an abstract class is used to initialize fields of the abstract class when a subclass object is created.
-2. difference between PriorityBlockingQueue, LinkedBlockingQueue?
+2. difference between PrioritygQueue, dBlockingQueue(ArrayBlockingQueue,LinkedBlockingQueue)?
  In LinkedBlockingQueue FIFO order will be preserved, where as PriorityBlockingQueue elements will be sorteed.
 
 3. how linkedhashmap works?
 
-21/08/2025--- Andor tech
+21/08/2025--- Andor tech(Target)
 1. Spring boot project
 2. joins
 3. java 8 functional interfaces
@@ -341,10 +341,23 @@ If capacity is smaller, instead of treeifying, the HashMap will resize (rehash) 
 
 3. Spring actuator
 4. @Qualifier and @Primary
+It will be useful when we have parent class having child classes child1 and child2
+get the specific one we use @Qualifier and give more proirity we use @Primary
+
+@Primary tells Spring:
+"If there’s a tie, pick this one unless another is explicitly specified."
+
+@Qualifier overrides @Primary
+If both exist, Spring follows the more specific instruction (@Qualifier).
+
 5. java memory management
 6. Executor framework example print even and odd numbers
-   and difference between executor.execute and submit methods
-7. Completable feature in java
+   and difference between executor.execute and submit methods -->
+
+   You just want to run a task asynchronously and don’t care about the result	execute() -->Runnable
+   You need to get result, handle exceptions, or cancel the task	submit()-->Callable
+
+7. CompletableFuture in java
 8. Optional class example full like
     how many ways  we can create a Optional object and different Optional object methods
     and difference between orElse and orELseGet()
@@ -358,7 +371,7 @@ If capacity is smaller, instead of treeifying, the HashMap will resize (rehash) 
 
 25/08/2025-- Mphasis second round
 
-1. second highest salary
+1. second highest salary by department wise.
 2. which gargbge collector when to use
 3. types of class loaders
 4. difference between flatmap, concurrenthsahmap, weakmap
@@ -382,9 +395,33 @@ React
 
 
 03/09/2025
-1. producer and consumer programme
-2. java 17 features sealed class and how improvemnets
-3. empId, trans, status, ammount, date  i have these fields get the empid and sum of transactions done in a particular month.
+1. producer and consumer program in multi threading
+2. java 17 features sealed class and how improvements
+
+1. Text Blocks
+String json = """
+    {
+        "name": "Ramu",
+        "role": "Developer"
+    }
+    """;
+2. Sealed class
+
+public sealed class Shape permits Circle, Rectangle {}
+
+final class Circle extends Shape {}
+final class Rectangle extends Shape {}
+
+6️⃣ Enhanced switch Expressions (✅)
+String result = switch (day) {
+    case "MON", "TUE", "WED" -> "Weekday";
+    case "SAT", "SUN" -> "Weekend";
+    default -> throw new IllegalStateException();
+};
+
+
+
+3. empId, trans, status, amount, date  i have these fields get the empid and sum of transactions done in a particular month DB query
 4. how do you find the slow running application in micro services
 
 
@@ -402,7 +439,7 @@ Output for below ?
 4.
 
 09/09/2025 --Virtusa
-1. method hiding
+1. method hiding in java
 
 Parent p=new child()--> even though it is child object, resolution happens at the time of compilation based on the Reference type
 so parent method will be called
@@ -446,6 +483,8 @@ Ensure the topic has enough partitions (one consumer can consume one partition a
    batch.size=32768
    buffer.memory=67108864
    max.block.ms=60000
+
+
 3. Add More Kafka Partitions
 
    Kafka consumers scale horizontally by partition.
@@ -472,7 +511,7 @@ Actually client has to register with the eureka server.
 
 
 12/09/2025(wissen -round -01)------------>MorganStanley
-1. String s="mijuiihhssiioookkklllssdd" find the first non repating character place
+1. String s="mijuiihhssiioookkklllssdd" find the first non repeating character place
 2. Find the longest substring
 3. I want store employee object into hashmap what we need to take of
 4. what is the relation between hashcode and equlas
@@ -529,7 +568,8 @@ for the above find the top 3 value after grouping
                     EmpId, name
                      EmployeeSalarry --->table
                     id, EmpId, salary, allowance
-            list of employyee name starts with R and salary more than 10L and allowance between 5 to 10 K*/
+
+ list of employyee name starts with R and salary more than 10L and allowance between 5 to 10 K*/
 
 SELECT e.name
 FROM Employee e
@@ -575,7 +615,7 @@ one will wait for other thread object is same object level lock required here.
  select country, count(country)
            from cutomers
             group by country
-            havin  count(country)
+            having  count(country)
 2.   /*  Given a list of words, group them by anagrams, and sort the groups by the frequency (descending) of words in each group.
           Within each group, sort the words in ascending order.
 
@@ -611,7 +651,7 @@ one will wait for other thread object is same object level lock required here.
         }
 
 19/09/2025 EPAM
-1. Atomic integer volatile difference
+1. Atomic Integer volatile difference
 Use volatile when you just want to make sure all threads see the latest value (e.g., a stop flag in a loop).
 
 Use AtomicInteger when you need thread-safe increments, counters, or CAS updates.
@@ -749,6 +789,16 @@ Adidas:
 
 RobertBosch(bench people epam interview questions)
 1. how @Conditionalbean works
+“Only create this bean if a certain condition is true.”
+@ConditionalOnProperty(name="payment.gateway", havingValue="stripe")
+@Bean
+public PaymentService stripeService() { ... }
+
+@ConditionalOnProperty(name="payment.gateway", havingValue="razorpay")
+@Bean
+public PaymentService razorpayService() { ... }
+
+
 2. @Async
 3. Limitations of @AutoConfigurations try to relate with N+1 problem.
 4. versioning in API -ways to do it
@@ -777,6 +827,7 @@ Goldman sachs---   08/10/2025 Goldman sachs internal round
     difference between supplyAsync, runAysnc
     how it differs from the Callable
 2. group the employees by age and display only the age and list of employee names not employee objects
+collectors.groupBy(Employee:age, Collectors.mapping()
 
 25,{"ramu","raja"},
 26,{"Sravan", "Arun"}
