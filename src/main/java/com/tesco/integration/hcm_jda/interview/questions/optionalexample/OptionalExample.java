@@ -7,6 +7,8 @@ public class OptionalExample {
 
         Optional<String> opt = Optional.of("Hello");
         opt.ifPresent(x->System.out.println(x));
+        System.out.println(opt.orElse("opt"));
+
 
         Optional<String> emptyOpt = Optional.empty();
 

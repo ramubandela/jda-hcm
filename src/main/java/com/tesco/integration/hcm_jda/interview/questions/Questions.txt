@@ -1109,6 +1109,16 @@ filter(c -> str.indexOf(c) == str.lastIndexOf(c)).
 findFirst().get();
 System.out.println(res);
 
+12/11/2025 ->London stock exchange
+1. CICD -->Github actions--> deploy all the services at a time
+2. spring boot transactions propagations(Requires , new, supports, mandatory, never, not supported)
+3. why those many types required
+4. find the longest string in java8
+5. n+1 problem in jpa
+6. distributed caching
+7. why do we require first level and second level cache
+10. richardson maturity  model
+11. how to handle disaster recovery?
 
 
 
