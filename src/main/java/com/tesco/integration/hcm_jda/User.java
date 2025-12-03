@@ -1,24 +1,29 @@
 package com.tesco.integration.hcm_jda;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
 public class User {
     public User() {
     }
 
-    private String id;
+    private Long id;
     private String name;
     private int age;
 
-    public User(String id, String name, int age) {
+    public User(Long id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

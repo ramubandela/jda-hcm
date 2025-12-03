@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping("/employees")
     public List<User> getUsers() {
-        return List.of(new User("1","ramu",21),new User("2","rahul",32),new User("3","raja",45));
+        return List.of(new User(1l,"ramu",21),new User(2l,"rahul",32),new User(3l,"raja",45));
     }
 
 }

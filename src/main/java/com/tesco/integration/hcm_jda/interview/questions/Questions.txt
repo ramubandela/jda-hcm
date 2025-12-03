@@ -708,7 +708,7 @@ Examples:
 
 202 Accepted → Request accepted but processing is not complete (async).
 
-204 No Content → Success but no body in response (e.g., DELETE).
+204 No Content → Success but no body in response (e.g., DELETE)
 
 4xx → Client Errors
 
@@ -1119,6 +1119,28 @@ System.out.println(res);
 7. why do we require first level and second level cache
 10. richardson maturity  model
 11. how to handle disaster recovery?
+12. difference between @RestController and @Controller(@RestController = @Controller + @ResponseBody)
+@ResponseBody directly sends  response body in JSON/XML format to http calls instead of sending to view.
+13. what is @SpringBootApplication?(@EanbleAutoConfiguration, @ComponentScan, @Configuration)
+14. difference between @EanbleAutoConfiguration and @Configuration
 
+@EnableAutoConfiguration is like going to a Buffet:
+You pick a plate, and everything is already set up and ready to use based on common assumptions. It's fast and easy.
 
+When you want Spring Boot to automatically guess and configure standard beans based on the libraries present in your project's classpath.
 
+@Configuration is like Cooking a Meal from Scratch:
+You decide every ingredient, every step, and every detail. It requires more work, but you have complete control over the final result.
+	When you want to manually define specific beans and wiring logic using @Bean methods in your own Java classes.
+
+02/12/2025- Edward jones Epam internal
+1. difference between 204 and 404 when do use which one
+2. explain about the RestImplementation in spring boot
+3. GroupBy with department and find the average of salary with respect to deparrtment wise.example example with
+4. Clean design vs clean code
+5. declarative programming means
+6. does kafka suppors horizontal scaling
+7. Does one producer can send messages to different partitions
+8. does one consumer can read messages from different partitions?
+9. how do you handle exceptions in spring boot projects
+10.

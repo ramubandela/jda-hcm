@@ -15,7 +15,7 @@ public class UserService {
                 .uri("/users/{id}", id)
                 .retrieve()
                 .bodyToMono(User.class)
-                .switchIfEmpty(Mono.just(new User("0", "Not Found", 0)))
+                .switchIfEmpty(Mono.just(new User(0l, "Not Found", 0)))
                 .map(user -> {
                     user.setName(user.getName().toUpperCase());
                     return user;
@@ -26,7 +26,7 @@ public class UserService {
                 })
                 .onErrorResume(e -> {
                     User fallback = new User();
-                    fallback.setId("0");
+                    fallback.setId(0l);
                     fallback.setName("Fallback User");
                     fallback.setAge(0);
                     return Mono.just(fallback);
